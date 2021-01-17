@@ -1,0 +1,45 @@
+﻿@model IEnumerable<EmployeesTest.Common.DTO.EmployeesDTO>
+
+@{
+    ViewBag.Title = "Get Employees";
+}
+
+<h2>Get Employees</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateEmployee")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Fname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fullname)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fullname)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "UpdateEmployee", new { EmployeeId = item.Id }) |
+            @Html.ActionLink("Details", "GetEmployee", new { EmployeeId = item.Id }) |
+            @Html.ActionLink("Delete", "DeleteEmployee", new { EmployeeId = item.Id })
+        </td>
+    </tr>
+}
+
+</table>

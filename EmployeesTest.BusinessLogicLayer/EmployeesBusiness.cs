@@ -166,6 +166,7 @@ namespace EmployeesTest.BusinessLogicLayer
             EmployeesDTO dto = new EmployeesDTO();
             dto.Fname = entity.Fname;
             dto.Lname = entity.Lname;
+            dto.Id = entity.Id;
             return dto;
         }
     }
